@@ -30,6 +30,12 @@
 
         <input type="password" name="password" placeholder="Password"><br>
 
+        <label>Confirm Password</label>
+
+        <input type="password" name="confirm_password" placeholder="Confirm Password"><br>
+
+        <button type="submit">Register</button>
+
         <button type="submit">Login</button>
 
      </form>
