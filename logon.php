@@ -12,46 +12,29 @@
     <!-- add form to validate new login (probably javascript)
     input for username, password repeat password and submit button
     button sned to home page-->
-    <label for="usernameInput">Enter username: </label><br>
-    <input type="text" id="usernameInput" ><br><br>
+    <form action="Validatelogon.php" method="post">
 
-    <label for="password1">Enter Password: </label><br>
-    <input type="text" id="password1" ><br><br>
+        <h2>LOG ON</h2>
 
-    <label for="password2">Re-enter Password: </label><br>
-    <input type="text" id="password2" ><br><br>
+        <?php if (isset($_GET['error'])) { ?>   <!--# checks if the 'error' parameter is set in the URL query string. #If it is set, it displays an error message. -->
 
-    <button onclick="passwordCheck()">Submit</button>
+            <p class="error"><?php echo $_GET['error']; ?></p>
 
-    <script>
-        function passwordCheck(){
-            if(document.getElementById("password1").value.length < 8)
-                console.log("Password too short")
+        <?php } ?>
 
-            var hasNum = false;
-            for(let i = 0; i < document.getElementById("password1").value.length; i++){
-                if(document.getElementById("password1").value[i] >= 0 && 
-                document.getElementById("password1").value[i] <= 9)
-                    hasNum = true;
-            }
+        <label>User Name</label>
 
-            if(!hasNum)
-                console.log("Password should include at least one digit.")
+        <input type="text" name="uname" placeholder="User Name"><br>
 
-            if(document.getElementById("password1").value != document.getElementById("password2").value)
-                console.log("Passwords should match.")
+        <label>Password</label>
 
-            //non-alphanumeric character
-            for(let i = 0; i < document.getElementById("password1").value.length; i++){
-                if(document.getElementById("password1").value[i] < 0 || 
-                document.getElementById("password1").value[i] > 9 && 
-                document.getElementById("password1").value[i] < 'A' ||
-                document.getElementById("password1").value[i] > 'Z' &&
-                document.getElementById("password1").value[i] < 'a' ||
-                document.getElementById("password1").value[i] > 'z')
-                    hasNum = true;
-            }
-        }
-    </script>
+        <input type="password" name="password1" placeholder="Password"><br>
+
+        <label>Re-enter Password: </label>
+        <input type="password" name="password2" placeholder="Re-enter Password"><br><br>
+
+        <button type="submit">Login</button>
+
+     </form>
 </body>
 </html>
