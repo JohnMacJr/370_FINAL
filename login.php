@@ -19,11 +19,14 @@
         <input type="password" name="password" placeholder="Password"><br>
         <button type="submit" name="login">Login</button>
         Don't have an account? 
-        <label class="login-signup" for="show-registration">Signup</label>
+    </form>
+    <form action="logon.php" method="post">
+    <button type="submit" name="login">SignUp</button>
     </form>
 
    <!-- Registration form -->
-   <form id="registrationForm" action="register.php" method="post">
+
+   <!--<form id="registrationForm" action="logon.php" method="post">
     <h2>REGISTER</h2>
     <label>User Name</label>
     <input type="text" name="username" placeholder="User Name"><br>
@@ -41,7 +44,7 @@
         <p id="number" class="invalid">A <b>number</b></b>
         <p id="length" class="invalid">Minimum <b>8 characters</b></p>
     </div>
-</form>
+</form>-->
 
 <script>
 var myInput = document.getElementById("password");
