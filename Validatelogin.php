@@ -38,7 +38,7 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
     
     else{
 
-        $sql = "SELECT * FROM login WHERE username='$uname' AND password='$pass'";
+        $sql = "SELECT * FROM users WHERE username='$uname' AND password='$pass'";
 
         $result = mysqli_query($conn, $sql);
          
